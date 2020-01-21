@@ -8,4 +8,15 @@ class Api::V1::ArticlesController < ApplicationController
     },
     status: :ok
   end
+
+  def show
+    article = Article.find(params[:id])
+    render json: {
+      status: 'SUCCESS',
+      message: 'Loading single article',
+      data: article
+    },
+    status: :ok
+  end
+  
 end
